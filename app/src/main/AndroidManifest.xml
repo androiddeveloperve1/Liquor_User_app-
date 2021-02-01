@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.liquoruser">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +18,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.SplashActivity"
+            android:theme="@style/AppThemeFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.AppIntroActivity"/>
+        <activity android:name=".ui.base.BaseActivity"/>
+        <activity android:name=".ui.base.BaseActivityWithoutActionBarActivity"/>
+        <activity android:name=".ui.ShoppingAddressActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.ForgotPassword" />
+        <activity android:name=".ui.SignUpStepOneActivity" />
+        <activity android:name=".ui.SignUpStepTwoActivity"/>
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.ReferFriendActivity" />
+        <activity android:name=".ui.MyOrdersActivity" />
+        <activity android:name=".ui.AccountDetailActivity" />
+        <activity android:name=".ui.MyAddressActivity" />
+        <activity android:name=".ui.MyReviewActivity" />
+        <activity android:name=".ui.PaymentInformationActivity" />
+        <activity android:name=".ui.NotificationActivity" />
+        <activity android:name=".ui.HelpAndSupportActivity" />
+        <activity android:name=".ui.ContactUsActivity" />
+        <activity android:name=".ui.AccessibilityActivity" />
+        <activity android:name=".ui.AcknowledgementActivity" />
+        <activity android:name=".ui.CustomWebViewActivity" />
     </application>
 
 </manifest>

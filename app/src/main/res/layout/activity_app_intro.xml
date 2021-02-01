@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dummy"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/appIntroViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_skip"
+        style="@style/BlackRegular14spStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        android:textColor="@color/colorRed"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"/>
+
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsColor="@color/colorWhite"
+        app:dotsCornerRadius="@dimen/dp_5"
+        app:dotsSize="@dimen/dp_10"
+        app:dotsSpacing="@dimen/dp_4"
+        app:dotsWidthFactor=".5"
+        app:selectedDotColor="@color/colorRed"
+        app:progressMode="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/dp_40"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

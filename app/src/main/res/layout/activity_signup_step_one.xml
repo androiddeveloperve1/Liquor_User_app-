@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/lyt_toolbar"
+        layout="@layout/toolbar_secondry"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_toolbar"
+        android:layout_margin="@dimen/dp_20">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_detailMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BlackRegular14spStyle"
+            android:textColor="@color/colorBlack2"
+            android:gravity="center"
+            android:text="@string/enter_your_delivery_address_to_see_product_in_your_area"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_solid_white_with_gray_border"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detailMsg"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/DefaultEditTextStyle"
+                android:background="@null"
+                android:hint="@string/delivery_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/iv_clear"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                app:srcCompat="@drawable/ic_close"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyt_addressBuilding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_solid_white_with_gray_border"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_address"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_addressApartmentBuilding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/DefaultEditTextStyle"
+                android:background="@null"
+                android:hint="@string/apt_floor_company_optional"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_addressType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_addressBuilding">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_home"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dp_40"
+                style="@style/BlackRegular14spStyle"
+                android:gravity="center"
+                android:text="@string/home"
+                android:textColor="@color/colorBlack2"
+                android:background="@drawable/bg_solid_white_with_gray_border"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_work"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dp_40"
+                style="@style/BlackRegular14spStyle"
+                android:gravity="center"
+                android:text="@string/work"
+                android:textColor="@color/colorBlack2"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/bg_solid_white_with_gray_border"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_custom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dp_40"
+                style="@style/BlackRegular14spStyle"
+                android:gravity="center"
+                android:text="@string/custom"
+                android:textColor="@color/colorBlack2"
+                android:background="@drawable/bg_solid_white_with_gray_border"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_continue"
+            style="@style/WhiteRegular16spBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/bg_red_with_rounded_corner"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@string/text_continue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_addressType" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

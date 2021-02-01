@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- booleans -->
+    <bool name="flagDebug">true</bool>
+
+    <!-- Integers -->
+    <integer name="intSplashTime">3000</integer>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="sp_5">8.67sp</dimen>
+    <dimen name="sp_7">11.33sp</dimen>
+    <dimen name="sp_8">12.67sp</dimen>
+    <dimen name="sp_9">14sp</dimen>
+    <dimen name="sp_10">15.33sp</dimen>
+    <dimen name="sp_11">16.84sp</dimen>
+    <dimen name="sp_12">18sp</dimen>
+    <dimen name="sp_13">19.33sp</dimen>
+    <dimen name="sp_14">20.67sp</dimen>
+    <dimen name="sp_15">22sp</dimen>
+    <dimen name="sp_16">23.33sp</dimen>
+    <dimen name="sp_17">24.94sp</dimen>
+    <dimen name="sp_18">26.4sp</dimen>
+    <dimen name="sp_19">27.87sp</dimen>
+    <dimen name="sp_20">29.34sp</dimen>
+    <dimen name="sp_21">30.8sp</dimen>
+    <dimen name="sp_22">32.27sp</dimen>
+    <dimen name="sp_23">33.74sp</dimen>
+    <dimen name="sp_24">35.2sp</dimen>
+    <dimen name="sp_25">36.68sp</dimen>
+    <dimen name="sp_30">44.012sp</dimen>
+    <!--  -->
+    <dimen name="dp_0.50">2dip</dimen>
+    <dimen name="dp_1">1.67dip</dimen>
+    <dimen name="dp_2">3.34dip</dimen>
+    <dimen name="dp_3">5dip</dimen>
+    <dimen name="dp_4">6.68dip</dimen>
+    <dimen name="minus_dp_4">-6.68dip</dimen>
+    <dimen name="dp_5">8.35dip</dimen>
+    <dimen name="dp_6">10dip</dimen>
+    <dimen name="dp_7">11.7dip</dimen>
+    <dimen name="dp_8">13.36dip</dimen>
+    <dimen name="dp_9">15dip</dimen>
+    <dimen name="dp_10">16.7dip</dimen>
+    <dimen name="dp_rate_10">33.4dip</dimen>
+    <dimen name="dp_11">18.37dip</dimen>
+    <dimen name="dp_12">20dip</dimen>
+    <dimen name="dp_13">21.71dip</dimen>
+    <dimen name="dp_14">23.38dip</dimen>
+    <dimen name="dp_15">25dip</dimen>
+    <dimen name="dp_16">26.72dip</dimen>
+    <dimen name="dp_18">30.06dip</dimen>
+    <dimen name="dp_20">33.4dip</dimen>
+    <dimen name="dp_22">36.74dip</dimen>
+    <dimen name="dp_25">41.75dip</dimen>
+    <dimen name="dp_30">50.1dip</dimen>
+    <dimen name="dp_35">58.45dip</dimen>
+    <dimen name="dp_40">66.8dip</dimen>
+    <dimen name="dp_45">75.15dip</dimen>
+    <dimen name="dp_50">83.5dip</dimen>
+    <dimen name="dp_55">91.85dip</dimen>
+    <dimen name="dp_60">100.2dip</dimen>
+    <dimen name="dp_65">108.55dip</dimen>
+    <dimen name="dp_70">116.9dip</dimen>
+    <dimen name="dp_73">121.9dip</dimen>
+    <dimen name="dp_80">133.6dip</dimen>
+    <dimen name="dp_85">141.9dip</dimen>
+    <dimen name="dp_90">150.3dip</dimen>
+    <dimen name="dp_100">167dip</dimen>
+    <dimen name="dp_120">200.4dip</dimen>
+    <dimen name="dp_130">217.1dip</dimen>
+    <dimen name="dp_150">250.5dip</dimen>
+    <dimen name="dp_170">283.9dp</dimen>
+    <dimen name="dp_240">400.8dip</dimen>
+    <dimen name="dp_220">367.4dip</dimen>
+    <dimen name="dp_230">384.1dip</dimen>
+    <dimen name="dp_300">501dip</dimen>
+    <dimen name="dp_180">300.6dip</dimen>
+    <dimen name="dp_200">334dip</dimen>
+
+    <!-- tabbar dimantion -->
+    <dimen name="corner_radius">1dp</dimen>
+    <dimen name="tab_space_top">0dp</dimen>
+    <dimen name="tab_space">0dp</dimen>
+    <dimen name="tab_space_plus1">0dp</dimen>
+    <dimen name="tab_space_bottom_line">0sp</dimen>
+    <dimen name="tab_space_unselected_top">0sp</dimen>
+
+</resources>

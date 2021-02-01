@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <include
+        android:id="@+id/lyt_toolbar"
+        layout="@layout/toolbar_secondry"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyt_toolbar">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_signUpWithFacebook"
+            style="@style/WhiteRegular16spBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/facebook"
+            android:background="@drawable/bg_blue_button"
+            android:paddingLeft="@dimen/dp_30"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@string/continue_with_facebook"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_signUpWithEmail"
+            style="@style/WhiteRegular16spBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_red_with_rounded_corner"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@string/sign_up_with_email"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithFacebook" />
+
+        <View
+            android:id="@+id/view_left"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/colorLabel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_or"
+            app:layout_constraintTop_toTopOf="@+id/tv_or"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_or"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:textColor="@color/colorLabel"
+            style="@style/BlackRegular14spStyle"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintLeft_toRightOf="@+id/view_left"
+            app:layout_constraintRight_toLeftOf="@+id/view_right"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithEmail"/>
+
+        <View
+            android:id="@+id/view_right"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/colorLabel"
+            app:layout_constraintLeft_toRightOf="@+id/tv_or"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_or"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_or"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loginTitle"
+            style="@style/BlackBold16spStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_or"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_solid_white_with_gray_border"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_loginTitle"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/EmailEditTextStyle"
+                android:background="@null"
+                android:hint="@string/email_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lyt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_solid_white_with_gray_border"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_email"
+            android:padding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/PasswordEditTextStyle"
+                android:background="@null"
+                android:hint="@string/password"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/iv_showHidePassword"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_showHidePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/hidden"
+                android:padding="@dimen/dp_5"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_forgotPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/BlackRegular14spStyle"
+            android:text="@string/forgot_password"
+            android:padding="@dimen/dp_10"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/colorRed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_password"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_login"
+            style="@style/WhiteRegular16spBtnStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_red_with_rounded_corner"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@string/log_in"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_forgotPassword" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
