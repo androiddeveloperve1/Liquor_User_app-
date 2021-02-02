@@ -177,6 +177,5 @@ class HomeFragment : Fragment(), View.OnClickListener, CategoryItemClickListener
 
     override fun onItemClickListener(view: View, position: Int, categoryType: Int) {
         (activity as HomeActivity).setDisplayFragment(6)
-        //ToastMsgUtils.showSuccessMsg((activity as HomeActivity).getParentView(), "Coming soon")
     }
 }

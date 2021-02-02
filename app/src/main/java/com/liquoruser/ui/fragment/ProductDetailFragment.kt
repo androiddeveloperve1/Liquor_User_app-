@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.liquoruser.R
 import com.liquoruser.listener.ItemClickListener
 import com.liquoruser.model.testModels.itemDetail.ItemAvailableQuantityModel
+import com.liquoruser.model.testModels.itemDetail.ItemReviewRatingProgressModel
 import com.liquoruser.ui.HomeActivity
 import com.liquoruser.ui.adapter.itemDetail.ItemAvailableQuantityListAdapter
 import com.liquoruser.ui.adapter.itemDetail.ItemQuantitySelectionAdapter
+import com.liquoruser.ui.adapter.itemDetail.ItemReviewRatingProgressListAdapter
+import com.liquoruser.ui.adapter.itemDetail.SortByReviewRatingListAdapter
 import com.liquoruser.utility.AppConstants
 import kotlinx.android.synthetic.main.fragment_product_detail.view.*
 
@@ -104,6 +107,9 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         mView?.btn_productReview?.setOnClickListener(this)
         mView?.tv_showAllDetails?.setOnClickListener(this)
         mView?.btn_addToCart?.setOnClickListener(this)
+        mView?.btn_writeAReview?.setOnClickListener(this)
+        mView?.lyt_reviewSortBy?.setOnClickListener(this)
+        mView?.iv_dropDown?.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -143,6 +149,18 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
             R.id.btn_addToCart->
             {
 
+            }
+            R.id.btn_writeAReview->
+            {
+
+            }
+            R.id.lyt_reviewSortBy->
+            {
+                mView?.rv_reviewRatingProgress?.performClick()
+            }
+            R.id.iv_dropDown ->
+            {
+                mView?.rv_reviewRatingProgress?.performClick()
             }
         }
     }
@@ -208,6 +226,56 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
                 mView?.tv_productReview?.setTextColor(resources.getColor(R.color.colorRed))
                 mView?.view_productReview?.setBackgroundColor(resources.getColor(R.color.colorRed))
                 mView?.lyt_reviewView?.visibility = View.VISIBLE
+                setupReviewRatingProgressList()
+                setupSortByRatingReviewView()
+            }
+        }
+    }
+
+    private fun setupReviewRatingProgressList()
+    {
+        val itemReviewRatingProgressList = ArrayList<ItemReviewRatingProgressModel>()
+        val item = ItemReviewRatingProgressModel("5", 80, "136")
+        itemReviewRatingProgressList.add(item)
+        val item1 = ItemReviewRatingProgressModel("4", 50, "25")
+        itemReviewRatingProgressList.add(item1)
+        val item2 = ItemReviewRatingProgressModel("3", 30, "17")
+        itemReviewRatingProgressList.add(item2)
+        val item3 = ItemReviewRatingProgressModel("2", 20, "10")
+        itemReviewRatingProgressList.add(item3)
+        val item4 = ItemReviewRatingProgressModel("1", 10, "1")
+        itemReviewRatingProgressList.add(item4)
+
+        val mItemReviewRatingProgress = ItemReviewRatingProgressListAdapter(activity!!, itemReviewRatingProgressList)
+        val mLayoutManager = LinearLayoutManager(activity)
+        mView?.rv_reviewRatingProgress?.layoutManager = mLayoutManager
+        mView?.rv_reviewRatingProgress?.adapter = mItemReviewRatingProgress
+        mView?.rv_reviewRatingProgress?.hasFixedSize()
+        mView?.rv_reviewRatingProgress?.isNestedScrollingEnabled
+    }
+
+    private fun setupSortByRatingReviewView()
+    {
+        val sortByList = ArrayList<String>()
+        sortByList.add("Newest")
+        sortByList.add("Highest Rating")
+        sortByList.add("Lowest Rating")
+
+        val mSortBySelectionAdapter = SortByReviewRatingListAdapter(activity!!, sortByList)
+        mView?.spinner_sortByReviewRating?.adapter = mSortBySelectionAdapter
+
+        mView?.spinner_sortByReviewRating?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                //val selectedRole = parent!!.adapter.getItem(position) as String
             }
         }
     }
