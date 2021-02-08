@@ -5,6 +5,9 @@
     <string name="terms_of_services_url">https://policies.google.com/terms?hl=en-US</string>
     <string name="privacy_policy_url">https://policies.google.com/privacy?hl=en-US</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="please_select_an_option">Please select an option</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
@@ -141,4 +144,14 @@
     <string name="product_detail">Product Detail</string>
     <string name="show_all_details">Show All Details</string>
     <string name="write_a_review">Write A Review</string>
+    <string name="show_all_reviews">Show all reviews</string>
+    <string name="description">Description</string>
+    <string name="your_reviews_will_help_other_customers">Your reviews will help other customers</string>
+    <string name="done">Done</string>
+    <string name="what_did_you_think">What did you think?</string>
+    <string name="by_shopping_multiple_stores_you_can_see_more_products_available_to_you_but_may_receive_multiple_deliveries_and_delivery_fees">By shopping multiple stores, you can see more products available to you, but may receive multiple deliveries and delivery fees.</string>
+    <string name="ok">Ok</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="customer_also_viewed">Customer also viewed</string>
 </resources>

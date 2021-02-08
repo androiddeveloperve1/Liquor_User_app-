@@ -37,6 +37,7 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
         profile_btn.setOnClickListener(this)
         iv_toolbarScan.setOnClickListener(this)
         iv_toolbarCart.setOnClickListener(this)
+        iv_toolbarBack.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -45,6 +46,10 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
             R.id.iv_toolbarCart ->
             {
                 ToastMsgUtils.showSuccessMsg(lyt_parent, "Coming soon..")
+            }
+            R.id.iv_toolbarBack ->
+            {
+                removeFragmentFromBackStack()
             }
             R.id.home_btn ->
             {
@@ -160,6 +165,30 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
                 fragmentName = "ProductDetailFragment"
                 replaceFragment(mFragment, fragmentName)
             }
+            7 ->
+            {
+                mFragment = ShowAllProductReviewFragment()
+                fragmentName = "ShowAllProductReviewFragment"
+                replaceFragment(mFragment, fragmentName)
+            }
+            8 ->
+            {
+                mFragment = GiveRatingToProductFragment()
+                fragmentName = "GiveRatingToProductFragment"
+                replaceFragment(mFragment, fragmentName)
+            }
+            9 ->
+            {
+                mFragment = WriteReviewToProductFragment()
+                fragmentName = "WriteReviewToProductFragment"
+                replaceFragment(mFragment, fragmentName)
+            }
+            10 ->
+            {
+                mFragment = SimilarProductsFragment()
+                fragmentName = "SimilarProductsFragment"
+                replaceFragment(mFragment, fragmentName)
+            }
         }
     }
 
@@ -177,7 +206,7 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
             .commit()
     }
 
-    private fun removeFragmentFromBackStack() {
+     fun removeFragmentFromBackStack() {
         if (supportFragmentManager.findFragmentById(R.id.fragment_container) is HomeFragment) {
             finish()
         } else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is SearchFragment) {
@@ -190,7 +219,15 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
             supportFragmentManager.popBackStackImmediate()
         }else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is ProductDetailFragment) {
             supportFragmentManager.popBackStackImmediate()
-        } else {
+        }else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is ShowAllProductReviewFragment) {
+            supportFragmentManager.popBackStackImmediate()
+        } else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is GiveRatingToProductFragment) {
+            supportFragmentManager.popBackStackImmediate()
+        } else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is WriteReviewToProductFragment) {
+            supportFragmentManager.popBackStackImmediate()
+        }else if (supportFragmentManager.findFragmentById(R.id.fragment_container) is SimilarProductsFragment) {
+            supportFragmentManager.popBackStackImmediate()
+        }else {
             finish()
         }
     }
@@ -199,9 +236,14 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
         removeFragmentFromBackStack()
     }
 
-    fun setToolbarTitle(string: String)
+    fun setCenterToolbarTitle(string: String)
     {
-        tv_pageTitle.text = string
+        tv_centerPageTitle.text = string
+    }
+
+    fun setLeftToolbarTitle(string: String)
+    {
+        tv_toolbarLeftTitle.text = string
     }
 
     fun setToolbarViewVisibility(isVisible: Boolean)
@@ -213,6 +255,30 @@ class HomeActivity: BaseActivity(), View.OnClickListener {
         else
         {
             lyt_toolbarView.visibility = View.GONE
+        }
+    }
+
+    fun setToolbarLeftTitleViewVisibility(isVisible: Boolean)
+    {
+        if (isVisible)
+        {
+            tv_toolbarLeftTitle.visibility = View.VISIBLE
+        }
+        else
+        {
+            tv_toolbarLeftTitle.visibility = View.GONE
+        }
+    }
+
+    fun setToolbarCenterTitleViewVisibility(isVisible: Boolean)
+    {
+        if (isVisible)
+        {
+            lyt_toolbarCenterTitle.visibility = View.VISIBLE
+        }
+        else
+        {
+            lyt_toolbarCenterTitle.visibility = View.GONE
         }
     }
 

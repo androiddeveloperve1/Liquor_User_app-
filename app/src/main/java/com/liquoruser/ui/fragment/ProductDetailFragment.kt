@@ -8,21 +8,24 @@ import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.liquoruser.R
+import com.liquoruser.listener.CategoryItemClickListener
 import com.liquoruser.listener.ItemClickListener
+import com.liquoruser.model.testModels.home.HomePageItemModel
+import com.liquoruser.model.testModels.home.ItemModel
 import com.liquoruser.model.testModels.itemDetail.ItemAvailableQuantityModel
 import com.liquoruser.model.testModels.itemDetail.ItemReviewRatingProgressModel
 import com.liquoruser.ui.HomeActivity
-import com.liquoruser.ui.adapter.itemDetail.ItemAvailableQuantityListAdapter
-import com.liquoruser.ui.adapter.itemDetail.ItemQuantitySelectionAdapter
-import com.liquoruser.ui.adapter.itemDetail.ItemReviewRatingProgressListAdapter
-import com.liquoruser.ui.adapter.itemDetail.SortByReviewRatingListAdapter
+import com.liquoruser.ui.adapter.home.HomeHorizontalItemListAdapter
+import com.liquoruser.ui.adapter.itemDetail.*
 import com.liquoruser.utility.AppConstants
 import kotlinx.android.synthetic.main.fragment_product_detail.view.*
 
-class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListener {
+class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListener,
+    CategoryItemClickListener {
 
     private var mItemAvlQtyList: ArrayList<ItemAvailableQuantityModel>? = null
     private var mItemAvailableQtyAdapter: ItemAvailableQuantityListAdapter? = null
+    private var mCustomerAlsoViewedList: ArrayList<ItemModel>? = null
     private var mView: View? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,13 +47,16 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         setupItemQtySelectionList()
         setupGetItNowLaterShippingView(AppConstants.GET_IT_NOW)
         setupProductDetailReviewView(AppConstants.PRODUCT_DETAIL)
+        setupCustomerViewedItemList()
         setupclickListener()
         return mView
     }
 
     private fun setupToolbar() {
-        (activity as HomeActivity).setToolbarTitle("Item name")
+        (activity as HomeActivity).setCenterToolbarTitle("Item name")
         (activity as HomeActivity).setToolbarViewVisibility(true)
+        (activity as HomeActivity).setToolbarCenterTitleViewVisibility(true)
+        (activity as HomeActivity).setToolbarLeftTitleViewVisibility(false)
         (activity as HomeActivity).setSearchViewVisibility(false)
     }
 
@@ -71,6 +77,83 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         mView?.rv_itemQuantity?.adapter = mItemAvailableQtyAdapter
         mView?.rv_itemQuantity?.hasFixedSize()
         mView?.rv_itemQuantity?.isNestedScrollingEnabled
+    }
+
+    private fun setupCustomerViewedItemList()
+    {
+        mCustomerAlsoViewedList = ArrayList<ItemModel>()
+        val item = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            false,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            4.5,
+            "300"
+        )
+        mCustomerAlsoViewedList?.add(item)
+        val item1 = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            true,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            4.5,
+            "300"
+        )
+        mCustomerAlsoViewedList?.add(item1)
+        val item2 = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            false,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            4.5,
+            "300"
+        )
+        mCustomerAlsoViewedList?.add(item2)
+        val item3 = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            true,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            4.5,
+            "300"
+        )
+        mCustomerAlsoViewedList?.add(item3)
+        val item4 = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            false,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            4.5,
+            "300"
+        )
+        mCustomerAlsoViewedList?.add(item4)
+        val item5 = ItemModel(
+            "Tito's Handmade Vodka",
+            R.mipmap.image_one,
+            true,
+            "Deal-Save 21.0%",
+            "19.99",
+            "750.0ml Bottle",
+            3.5,
+            "200"
+        )
+
+        val mCustomerViewItemListAdapter = HomeHorizontalItemListAdapter(activity!!, this, mCustomerAlsoViewedList!!)
+        val mLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        mView?.rv_customerViewedItem?.layoutManager = mLayoutManager
+        mView?.rv_customerViewedItem?.adapter = mCustomerViewItemListAdapter
+        mView?.rv_customerViewedItem?.hasFixedSize()
+        mView?.rv_customerViewedItem?.isNestedScrollingEnabled
     }
 
     private fun setupItemQtySelectionList() {
@@ -110,6 +193,8 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         mView?.btn_writeAReview?.setOnClickListener(this)
         mView?.lyt_reviewSortBy?.setOnClickListener(this)
         mView?.iv_dropDown?.setOnClickListener(this)
+        mView?.btn_showAllReviews?.setOnClickListener(this)
+        mView?.btn_viewAllProduct?.setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -145,6 +230,7 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
             }
             R.id.tv_showAllDetails ->
             {
+
             }
             R.id.btn_addToCart->
             {
@@ -152,7 +238,11 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
             }
             R.id.btn_writeAReview->
             {
-
+                (activity as HomeActivity).setDisplayFragment(8)
+            }
+            R.id.btn_showAllReviews->
+            {
+                (activity as HomeActivity).setDisplayFragment(7)
             }
             R.id.lyt_reviewSortBy->
             {
@@ -161,6 +251,10 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
             R.id.iv_dropDown ->
             {
                 mView?.rv_reviewRatingProgress?.performClick()
+            }
+            R.id.btn_viewAllProduct ->
+            {
+                (activity as HomeActivity).setDisplayFragment(10)
             }
         }
     }
@@ -228,6 +322,7 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
                 mView?.lyt_reviewView?.visibility = View.VISIBLE
                 setupReviewRatingProgressList()
                 setupSortByRatingReviewView()
+                setupUsersReviewList()
             }
         }
     }
@@ -280,6 +375,17 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         }
     }
 
+    private fun setupUsersReviewList()
+    {
+        val userReviewList = ArrayList<String>()
+        val mItemReviewListAdapter = ItemUserReviewListAdapter(activity!!, userReviewList)
+        val mLayoutManager = LinearLayoutManager(activity)
+        mView?.rv_userReviewList?.layoutManager = mLayoutManager
+        mView?.rv_userReviewList?.adapter = mItemReviewListAdapter
+        mView?.rv_userReviewList?.hasFixedSize()
+        mView?.rv_userReviewList?.isNestedScrollingEnabled = false
+    }
+
     override fun onItemClickListener(view: View, position: Int) {
         val selectedItem = mItemAvlQtyList?.get(position)
         for (i in 0 until mItemAvlQtyList?.size!!) {
@@ -288,5 +394,9 @@ class ProductDetailFragment : Fragment(), View.OnClickListener, ItemClickListene
         }
         selectedItem?.isSelectedQuantity = true
         mItemAvailableQtyAdapter?.notifyDataSetChanged()
+    }
+
+    override fun onItemClickListener(view: View, position: Int, categoryType: Int) {
+        (activity as HomeActivity).setDisplayFragment(6)
     }
 }

@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
 //            } else {
 //                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
 //            }
-            startActivity(Intent(this@SplashActivity, AppIntroActivity::class.java))
+            startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
             finish()
             SlideAnimationUtil.slideNextAnimation(this@SplashActivity)
         },DELAY_TIME)

@@ -9,54 +9,76 @@
         android:id="@+id/lyt_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/dp_25">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/lyt_toolbarView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="visible"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:gravity="center"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/iv_toolbarCart"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_title"
-                    style="@style/BlackBold16spStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/delivery"/>
-
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iv_tool_right"
+                    android:id="@+id/iv_toolbarBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_5"
-                    android:layout_marginRight="@dimen/dp_5"
-                    app:srcCompat="@mipmap/left_icon"
-                    android:layout_gravity="center_vertical"/>
+                    android:padding="@dimen/dp_8"
+                    app:srcCompat="@mipmap/back_arrow_2" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_pageTitle"
+                    android:id="@+id/tv_toolbarLeftTitle"
                     style="@style/BlackBold16spStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"/>
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/lyt_toolbarCenterTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_title"
+                        style="@style/BlackBold16spStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delivery" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_tool_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        app:srcCompat="@mipmap/left_icon" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_centerPageTitle"
+                        style="@style/BlackBold16spStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -67,7 +89,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/cart_icon"/>
+                app:srcCompat="@mipmap/cart_icon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -75,10 +97,10 @@
             android:id="@+id/lyt_searchView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="gone">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_toolbarSearch"
@@ -88,20 +110,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/search_off_icon"/>
+                app:srcCompat="@mipmap/search_off_icon" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/et_search"
+                style="@style/DefaultEditTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/DefaultEditTextStyle"
                 android:background="@null"
-                android:padding="@dimen/dp_5"
                 android:hint="@string/search_for_beer_wine"
+                android:padding="@dimen/dp_5"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/iv_toolbarSearch"
                 app:layout_constraintRight_toLeftOf="@+id/iv_toolbarScan"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_toolbarScan"
@@ -111,7 +133,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/scanner_icon"/>
+                app:srcCompat="@mipmap/scanner_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,32 +145,32 @@
         android:background="@color/colorWhite2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lyt_top"/>
+        app:layout_constraintTop_toBottomOf="@+id/lyt_top" />
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_top"
-        app:layout_constraintBottom_toTopOf="@+id/view_bottom" />
+        app:layout_constraintTop_toBottomOf="@+id/view_top" />
 
     <View
         android:id="@+id/view_bottom"
         android:layout_width="0dp"
         android:layout_height="@dimen/dp_1"
         android:background="@color/colorWhite2"
+        app:layout_constraintBottom_toTopOf="@+id/lyt_bootom"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/lyt_bootom"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
     <include
         android:id="@+id/lyt_bootom"
+        layout="@layout/layout_bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        layout="@layout/layout_bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

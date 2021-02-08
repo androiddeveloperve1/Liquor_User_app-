@@ -34,15 +34,12 @@ class ExploreFragment : Fragment(), View.OnClickListener {
         return mView
     }
 
-    private fun setupToolbar()
-    {
-        (activity as HomeActivity).setToolbarTitle(activity?.resources?.getString(R.string.title_explore)!!)
+    private fun setupToolbar() {
+        (activity as HomeActivity).setCenterToolbarTitle(activity?.resources?.getString(R.string.title_explore)!!)
         (activity as HomeActivity).setToolbarViewVisibility(true)
+        (activity as HomeActivity).setToolbarCenterTitleViewVisibility(true)
+        (activity as HomeActivity).setToolbarLeftTitleViewVisibility(false)
         (activity as HomeActivity).setSearchViewVisibility(false)
-
-//        (activity as HomeActivity).setToolbarMenuIconVisibility(false)
-//        (activity as HomeActivity).setToolbarBackIconVisibility(true)
-//        (activity as HomeActivity).setToolbarAddIconVisibility(false)
     }
 
     private fun initialiseUI()

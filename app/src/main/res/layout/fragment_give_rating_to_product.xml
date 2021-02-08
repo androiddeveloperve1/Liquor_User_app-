@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/close_icon"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_done">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_productImage"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/image_one" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_questionText"
+            style="@style/BlackBold16spStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="How was Item Name?"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_productImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_detailMsg"
+            style="@style/BlackRegular14spStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/your_reviews_will_help_other_customers"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_questionText" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize=".5"
+            android:progressTint="@color/colorYellow"
+            android:isIndicator="false"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detailMsg"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_writeReview"
+            style="@style/RedRegular14spStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/write_a_review"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:padding="@dimen/dp_5"
+            android:layout_margin="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_done"
+        style="@style/WhiteRegular16spBtnStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_red_with_rounded_corner"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/done"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

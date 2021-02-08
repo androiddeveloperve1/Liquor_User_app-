@@ -37,8 +37,10 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
     private fun setupToolbar()
     {
-        (activity as HomeActivity).setToolbarTitle(activity?.resources?.getString(R.string.title_profile)!!)
+        (activity as HomeActivity).setCenterToolbarTitle(activity?.resources?.getString(R.string.title_profile)!!)
         (activity as HomeActivity).setToolbarViewVisibility(true)
+        (activity as HomeActivity).setToolbarCenterTitleViewVisibility(true)
+        (activity as HomeActivity).setToolbarLeftTitleViewVisibility(false)
         (activity as HomeActivity).setSearchViewVisibility(false)
     }
 

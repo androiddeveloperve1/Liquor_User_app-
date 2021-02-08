@@ -48,6 +48,8 @@
         <activity android:name=".ui.AccessibilityActivity" />
         <activity android:name=".ui.AcknowledgementActivity" />
         <activity android:name=".ui.CustomWebViewActivity" />
+        <activity android:name=".ui.FilterActivity"
+            android:theme="@style/TransparentCompat"/>
     </application>
 
 </manifest>

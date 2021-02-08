@@ -41,7 +41,7 @@ class SearchFragment : Fragment(), View.OnClickListener, ItemClickListener {
 
     private fun setupToolbar()
     {
-        (activity as HomeActivity).setToolbarTitle(activity?.resources?.getString(R.string.title_search)!!)
+        (activity as HomeActivity).setCenterToolbarTitle(activity?.resources?.getString(R.string.title_search)!!)
         (activity as HomeActivity).setToolbarViewVisibility(false)
         (activity as HomeActivity).setSearchViewVisibility(true)
 
